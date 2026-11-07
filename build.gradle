@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.78'
+}
+
+version = '1.0.0'
+group = 'fr.chunkyautogen'
+base { archivesName = 'chunkyautogen' }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    // NeoForge pour Minecraft 1.21.1. Adapte si tu cibles 1.21 pile (21.0.x).
+    version = '21.1.172'
+
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+
+    mods {
+        chunkyautogen { sourceSet sourceSets.main }
+    }
+}
+
+// Aucune dépendance de compilation sur Chunky : le pont (ChunkyBridge) l'appelle par réflexion.
+// Pour tester en dev, dépose le jar de Chunky dans run/mods/.

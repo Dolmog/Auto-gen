@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "chunkyautogen"
+version = "1.0.1"
+displayName = "Chunky AutoGen"
+description = '''
+Pré-génère automatiquement, via Chunky, une zone autour de la position de déconnexion des joueurs.
+'''
+
+[[dependencies.chunkyautogen]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chunkyautogen]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21,1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chunkyautogen]]
+modId = "chunky"
+type = "required"
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "SERVER"
